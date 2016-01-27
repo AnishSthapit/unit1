@@ -1,0 +1,73 @@
+<Html>
+<Head>
+
+<title>My first page </title>
+<style type="text/css">
+	
+	#message {
+	display:none;
+}
+</style>
+
+
+<!-- <link type="text/css" rel="stylesheet" href="style.css" /> -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script>
+//alert("test");
+function callme(){
+/*var a=  confirm("Are you sure you want to submit this form?");
+if(a){
+	return true;
+}else{
+	return false;
+}*/
+
+
+
+
+var name= document.forms['form1']['Fname'].value;
+
+var gender= document.forms['form1']['Gender'].value;
+
+var password=document.forms['form1']['pw'].value;
+
+var Address=document.forms['form1']['Address'].value;
+
+var country=document.forms['form1']['country'].value;
+//alert (gender);
+if(name == "" || gender =="" || password=="" || Address=="" || country==""){
+
+	/*alert('please fill up the form');*/
+	document.getElementById('message').style.display = "block";
+	document.getElementById('message').style.color = "blue";
+	return false;
+}
+else{
+	return true;
+}
+}	
+
+	
+</script>
+</Head>
+<body><H1>Registration!!</h1>
+<form id="form1" role="form">
+<div class="form-group">
+<label> Name: </label><input class="form-control" type ="text" name="Fname" onclick="return()" /> </div>
+
+<br>
+<div class="form-group"><label> Password: </label><input class="form-control" type ="password" name="pw" /></div>
+<div class="form-group"><label> Address: </label> <textarea class="form-control" name="Address"></textarea></div>
+<br><label class="form-group"> Gender: </label><input type ="radio" name="Gender" value="Male"/>Male
+<input type ="radio" name="Gender" value="female"/>Female 
+
+<br><label>Country </label><select name="country" class="form-group">
+							<option value="Nepal">Nepal</option>
+							<option value="United States">United States</option>
+							<option value="Australia">Australia</option>
+							</select>
+<br>
+<span id="message">Please fill up tho form properly.</span> <br><input type="submit" name="Submit" value="Submit" class='btn btn-primary'  onclick="return callme();"/>
+</form> 
+</body>
+</Html>
